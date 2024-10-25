@@ -1,10 +1,20 @@
 import express from "express"
+import { Blog } from "../models/blog.model.js";
 
 const router = express.Router();
 router
     .get('/allBlogs', async(req, res)=>{
         const allBlogs = await Blog.find()
         res.status(201).json(allBlogs);
+    })
+    .post('/newBlog',async(req, res)=>{
+        const blog = await Blog.create({
+            title: "DEMO",
+            imageUrl: "image_blog.xyz",
+            blogUrl: "blog_notion.xyz",
+            creatorName: "swayanshu"
+        })
+        res.status(200).json(blog);
     })
     .get('/allSeries', async(req, res)=>{
         const allSeries = await Series.find()
