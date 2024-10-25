@@ -7,7 +7,7 @@ import cors from 'cors'
 const app = express();
 
 const corsOptions = {
-    origin: 'https://amitdevdiary.vercel.app/',
+    origin: 'https://amitdevdiary.vercel.app',
     methods: "GET, POST, PATCH, DELETE",
     credential: true
   }
