@@ -3,6 +3,10 @@ import { Blog } from "../models/blog.model.js";
 
 const router = express.Router();
 router
+    .get('/check', (req, res)=>{
+        res.status(200).send("check for upbot succeed");
+    })
+router
     .get('/allBlogs', async(req, res)=>{
         const allBlogs = await Blog.find()
         res.status(201).json(allBlogs);

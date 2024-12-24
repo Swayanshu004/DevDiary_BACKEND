@@ -17,6 +17,6 @@ const blogSchema = new mongoose.Schema({
         type: String,
         required: [true, 'creatorName is required.']
     },
-}, {timestamps: true});
+});
 
 export const Blog = mongoose.model('Blog', blogSchema);
